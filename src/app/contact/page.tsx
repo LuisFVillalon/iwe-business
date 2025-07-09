@@ -165,7 +165,7 @@ const handleCopyEmail = async (): Promise<void> => {
       {/* Header Section with Contact Info */}
       <div className="text-center mb-8">
         <h1 className="dm-serif-text-regular text-4xl  font-bold text-[#dab63e] mb-2">Get In Touch</h1>
-        <p className="text-white mb-2 text-lg">We're here to answer your questions and help your business grow!</p>
+        <p className="text-white mb-2 text-lg">We&apos;re here to answer your questions and help your business grow!</p>
         
         {/* Contact Info Display */}
         <div className="bg-white  rounded-lg p-4 mb-6">

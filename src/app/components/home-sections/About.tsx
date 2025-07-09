@@ -1,6 +1,5 @@
 import React from "react"; // ✅ Make sure this is present
 import Link from "next/link";
-import ClientScrollEffect from "../client-side/ClientScrollEffect";
 
 export default function About(){
 
