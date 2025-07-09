@@ -14,8 +14,8 @@ export const metadata: Metadata = {
   },
   description: 'Sitios web personalizados que generan clientes potenciales para pequeños negocios en el Valle Imperial y Mexicali. Construidos para durar. Diseñados para liderar. Obtén más visibilidad y reservas.',
   openGraph: {
-    title: 'Lead-Generating Websites | Imperial Valley & Mexicali',
-    description: 'Custom, lead-generating websites for small businesses in Imperial Valley & Mexicali. Built to last. Designed to lead. Get more visibility and bookings.',
+    title: 'Lead-Generating Websites | Valle Imperial y Mexicali',
+    description: 'Sitios web personalizados que generan clientes potenciales para pequeños negocios en el Valle Imperial y Mexicali. Construidos para durar. Diseñados para liderar. Obtén más visibilidad y reservas.',
     url: '',
     siteName: 'Imperial Web Experts',    
   },
