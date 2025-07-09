@@ -9,6 +9,9 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Sitios Web que Generan Clientes Potenciales | Valle Imperial y Mexicali',
+  icons: {
+    icon: '/iwe-logo.png',
+  },
   description: 'Sitios web personalizados que generan clientes potenciales para pequeños negocios en el Valle Imperial y Mexicali. Construidos para durar. Diseñados para liderar. Obtén más visibilidad y reservas.',
   openGraph: {
     title: 'Lead-Generating Websites | Imperial Valley & Mexicali',

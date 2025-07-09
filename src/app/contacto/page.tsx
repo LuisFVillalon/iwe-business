@@ -6,6 +6,21 @@ import Wrapper from '@/app/components/Wrapper';
 import Footer from '@/app/components/footer/Footer-Spanish';
 import ClientVerseSwitcher from '../components/client-side/ClientVerseSwitcher';
 import { Linkedin, Mail, User, MessageSquare, Copy, Check, Instagram, Loader2 } from 'lucide-react';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Contacttanos | Valle Imperial y Mexicali',
+  icons: {
+    icon: '/iwe-logo.png',
+  },
+  description: 'Contáctanos hoy mismo. Si tienes preguntas, necesitas ayuda o quieres un presupuesto personalizado, estamos aquí para ayudarte. Respuestas rápidas y claras.',
+  openGraph: {
+    title: 'Contacttanos | Imperial Valley & Mexicali',
+    description: 'Contáctanos hoy mismo. Si tienes preguntas, necesitas ayuda o quieres un presupuesto personalizado, estamos aquí para ayudarte. Respuestas rápidas y claras.',
+    url: '',
+    siteName: 'Imperial Web Experts',    
+  },
+}
 
 // TypeScript interfaces
 interface FormData {

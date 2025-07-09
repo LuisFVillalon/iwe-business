@@ -10,6 +10,9 @@ import ServicesPageCard from '../components/services-sections/ServicesPageCard';
 
 export const metadata: Metadata = {
   title: 'Services | Imperial Web Experts',
+  icons: {
+    icon: '/iwe-logo.png',
+  },
   description: 'Explore our web development services tailored for small businesses in Imperial Valley and Mexicali — from custom websites and SEO to fast, modern design that drives real results.',
   openGraph: {
     title: 'Services | Imperial Web Experts',

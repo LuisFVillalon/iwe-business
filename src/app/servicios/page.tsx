@@ -9,11 +9,14 @@ import ClientScrollEffect from '@/app/components/client-side/ClientScrollEffect'
 import ServicesPageCard from '@/app/components/services-sections/ServicesPageCard-Spanish';
 
 export const metadata: Metadata = {
-  title: 'Services | Imperial Web Experts',
-  description: 'Explore our web development services tailored for small businesses in Imperial Valley and Mexicali — from custom websites and SEO to fast, modern design that drives real results.',
+  title: 'Servicios | Imperial Web Experts',
+  icons: {
+    icon: '/iwe-logo.png',
+  },
+  description: 'Explore nuestros servicios de desarrollo web diseñados para pequeñas empresas en el Valle Imperial y Mexicali: desde sitios web personalizados y SEO hasta diseños rápidos y modernos que generan resultados reales.',
   openGraph: {
-    title: 'Services | Imperial Web Experts',
-    description: 'Discover how Imperial Web Experts helps small businesses in Mexicali and Imperial Valley grow online through custom web design, SEO, and lead-focused digital solutions.',
+    title: 'Servicios | Imperial Web Experts',
+    description: 'Explore nuestros servicios de desarrollo web diseñados para pequeñas empresas en el Valle Imperial y Mexicali: desde sitios web personalizados y SEO hasta diseños rápidos y modernos que generan resultados reales.',
     url: '',
     siteName: 'Imperial Web Experts',
   },

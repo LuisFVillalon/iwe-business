@@ -8,13 +8,16 @@ import Contact from '@/app/components/Contact';
 import ClientScrollEffect from '@/app/components/client-side/ClientScrollEffect';
 
 export const metadata: Metadata = {
-  title: 'About Us | Imperial Web Experts',
+  title: 'Sobre Nosotros | Imperial Web Experts',
+  icons: {
+    icon: '/iwe-logo.png',
+  },
   description:
-    'Learn more about Imperial Web Experts — a local web development agency helping small businesses grow with high-converting websites, SEO strategies, and modern design.',
+    'Obtenga más información sobre Imperial Web Experts, una agencia de desarrollo web local que ayuda a las pequeñas empresas a crecer con sitios web de alta conversión, estrategias de SEO y diseño moderno.',
   openGraph: {
-    title: 'About Us | Imperial Web Experts',
+    title: 'Sobre Nosotros | Imperial Web Experts',
     description:
-      'Learn more about Imperial Web Experts. We are dedicated to helping small businesses in Mexicali and Imperial Valley succeed online with custom websites and digital solutions.',
+      'Obtenga más información sobre Imperial Web Experts, una agencia de desarrollo web local que ayuda a las pequeñas empresas a crecer con sitios web de alta conversión, estrategias de SEO y diseño moderno.',
     url: '',
     siteName: 'Imperial Web Experts',
   },

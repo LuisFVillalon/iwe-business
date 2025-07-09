@@ -9,6 +9,9 @@ import ClientScrollEffect from '../components/client-side/ClientScrollEffect';
 
 export const metadata: Metadata = {
   title: 'About Us | Imperial Web Experts',
+  icons: {
+    icon: '/iwe-logo.png',
+  },
   description:
     'Learn more about Imperial Web Experts — a local web development agency helping small businesses grow with high-converting websites, SEO strategies, and modern design.',
   openGraph: {

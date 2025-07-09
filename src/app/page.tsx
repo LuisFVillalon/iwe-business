@@ -9,6 +9,9 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Lead-Generating Websites | Imperial Valley & Mexicali',
+  icons: {
+    icon: '/iwe-logo.png',
+  },
   description: 'Custom, lead-generating websites for small businesses in Imperial Valley & Mexicali. Built to last. Designed to lead. Get more visibility and bookings.',
   openGraph: {
     title: 'Lead-Generating Websites | Imperial Valley & Mexicali',
