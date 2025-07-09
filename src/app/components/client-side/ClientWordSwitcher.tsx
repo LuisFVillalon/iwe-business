@@ -50,8 +50,8 @@ export default function ClientWordSwitcher({ language }: LangProps): React.React
       >
         {
           (language == "spanish") ?
-            words[currentWordIndex] :
-            wordsSpanish[currentWordIndex]
+            wordsSpanish[currentWordIndex] :
+            words[currentWordIndex]
         }
       </em>
     </span>
