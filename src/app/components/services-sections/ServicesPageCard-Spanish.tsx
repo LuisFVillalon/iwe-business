@@ -76,7 +76,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({ title, description, ite
   return (
     <div className={`${bgColor} rounded-xl p-8 shadow-xl border border-gray-100  transition-all duration-300 backdrop-blur-sm bg-opacity-95`}>
       <div className="flex items-center mb-6">
-        <Icon className="w-8 h-8 mr-3" style={{ color: '#23508e' }} />
+        <Icon className="w-8 h-8 mr-3 text-[#23508e]"/>
         <h3 className="text-2xl font-bold" style={{ color: '#0A0A23' }}>{title}</h3>
       </div>
       {description && (
@@ -290,7 +290,7 @@ const ServicesPageCard: React.FC = () => {
                     <div>
                       <h4 className="text-xl font-semibold mb-4 flex items-center" style={{ color: '#0A0A23' }}>
                         <LineChart className="w-6 h-6 mr-3" style={{ color: '#23508e' }} />
-                        {packagesArrSpanish[0].seo[0].feature || packagesArrSpanish[0].seo[0].title}
+                        {packagesArrSpanish[0].seo[0].title}
                       </h4>
                       <p className="text-gray-600 mb-6 leading-relaxed">
                         {packagesArrSpanish[0].seo[0].description}
