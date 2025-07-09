@@ -1,5 +1,5 @@
 @import "tailwindcss";
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -23,4 +23,168 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.inter-text {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.merriweather-text {
+  font-family: "Merriweather", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.about-hero-section {
+  background-image: url('/about/about-hero.png');
+  background-size: cover;        /* Makes the image cover the whole element */
+  background-position: center;   /* Centers the image */
+  background-repeat: no-repeat;  /* Prevents the image from repeating */
+  height: 100vh;
+}
+.service-hero-section {
+  background-image: url('/services/services-hero.png');
+  background-size: cover;        /* Makes the image cover the whole element */
+  background-position: center;   /* Centers the image */
+  background-repeat: no-repeat;  /* Prevents the image from repeating */
+  height: 100vh;
+  
+}
+
+/* Keyframe for fade up animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scale-hover {
+  transition: opacity 0.6s ease-in-out, transform 0.5s ease-out;
+}
+.scale-hover:hover {
+  transform: scale(1.05);
+}
+
+/* Base class - elements start hidden and translate down */
+.fade-in-scroll, .fade-in-scroll-right, .fade-in-scroll-left {
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-scroll-hero {
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* When element is visible, animate it */
+.fade-in-scroll.visible, .fade-in-scroll-hero.visible  {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-in-scroll-right.visible, .fade-in-scroll-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+/* Mobile: Fade in from left */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Mobile: Fade in from right */
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Desktop: Fade in from top */
+@keyframes fadeInTop {
+  from {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* responsive animation class, left for mobile, top for desktop */
+.fade-in-responsive-left-top {
+  animation: fadeInLeft 1s ease-out forwards;
+}
+.fade-in-responsive-right-top {
+  animation: fadeInRight 1s ease-out forwards;
+}
+.fade-in-hero-right {
+  animation: fadeInRight 1s ease-out forwards;
+}
+.fade-in-hero-left {
+  animation: fadeInLeft 1s ease-out forwards;
+}
+.fade-in-ctabutton-bottom {
+  animation: fadeInBottom 1s ease-out forwards;
+}
+/* responsive animation class, right for mobile, left for desktop */
+.fade-in-responsive-right-left {
+  animation: fadeInRight 1s ease-out forwards;
+}
+
+.fade-in-top {
+  animation: fadeInTop 1s ease-out forwards;
+}
+
+/* Apply top animation on medium screens and up */
+@media (min-width: 768px) {
+  .fade-in-responsive-left-top  {
+    animation: fadeInTop 1s ease-out forwards;
+  }
+  .fade-in-responsive-right-top  {
+    animation: fadeInTop 1s ease-out forwards;
+  }
+  .fade-in-responsive-right-left {
+    animation: fadeInLeft 1s ease-out forwards;
+  }  
+  .fade-in-scroll-hero {
+    animation: fadeInRight 1s ease-out forwards;
+  }  
+  .fade-in-scroll-right {
+    transform: translateX(-2rem);
+  } 
+  .fade-in-scroll-left {
+    transform: translateX(2rem);
+  } 
 }
