@@ -9,59 +9,19 @@ import {
   websitePackages,
   carePlans,
   type LocalizedText,
-  type Price,
 } from "@/app/lib/servicesData";
 import {
-  Rocket,
-  Building2,
-  Workflow,
-  ShieldCheck,
-  TrendingUp,
-  Gem,
-  ArrowRight,
-  type LucideIcon,
-} from "lucide-react";
+  localize as L,
+  getPriceParts,
+  packageIconMap,
+  carePlanIconMap,
+} from "@/app/lib/servicesPresentation";
+import { Rocket, ShieldCheck, ArrowRight } from "lucide-react";
 
 const ACCENT_NAVY = "#0A0A23";
 const ACCENT_STEEL_BLUE = "#23508e";
 
 type Group = "packages" | "care";
-
-const L = (text: LocalizedText, language: Language): string =>
-  language === "english" ? text.en : text.es;
-
-function getPriceParts(price: Price, language: Language) {
-  const en = language === "english";
-  const unitSuffix: Record<"project" | "month" | "year" | "page", string> = {
-    project: en ? "/project" : "/proyecto",
-    month: en ? "/mo" : "/mes",
-    year: en ? "/yr" : "/año",
-    page: en ? "/page" : "/página",
-  };
-  const suffix = price.unit ? unitSuffix[price.unit] : "";
-
-  switch (price.type) {
-    case "custom":
-      return { prefix: "", amount: en ? "Custom" : "Personalizado", suffix: "" };
-    case "fixed":
-      return { prefix: "", amount: `$${price.amount}`, suffix };
-    case "startingAt":
-    default:
-      return { prefix: en ? "Starting at" : "Desde", amount: `$${price.amount}`, suffix };
-  }
-}
-
-const packageIconMap: Record<string, LucideIcon> = {
-  starter: Rocket,
-  business: Building2,
-  premium: Workflow,
-};
-
-const carePlanIconMap: Record<string, LucideIcon> = {
-  "essential-care": ShieldCheck,
-  "business-care": TrendingUp,
-  "premium-care": Gem,
-};
 
 const packageCtaMap: Record<string, LocalizedText> = {
   starter: { en: "Get Started", es: "Comenzar" },

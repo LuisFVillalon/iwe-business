@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { contactFormCopy } from '@/app/lib/contactFormCopy';
 import { useLanguage } from '@/app/components/client-side/LanguageProvider';
+import { siteConfig } from '@/app/lib/siteConfig';
 
 interface FormData {
   fullName: string;
@@ -125,7 +126,7 @@ const ContactForm: React.FC = () => {
   }
 
   const handleCopyEmail = async (): Promise<void> => {
-    const email = 'imperialwebexperts@gmail.com';
+    const email = siteConfig.email;
     try {
       // Use modern clipboard API
       await navigator.clipboard.writeText(email);
@@ -176,13 +177,13 @@ const ContactForm: React.FC = () => {
               <span className={`font-medium transition-colors duration-200 ${
                 isCopied ? 'text-green-600' : 'text-gray-800 group-hover:text-blue-800'
               }`}>
-                imperialwebexperts@gmail.com
+                {siteConfig.email}
               </span>
             </button>
           </div>
           <div className="text-xs md:text-lg flex items-center justify-center gap-2 md:gap-8">
             <a
-              href="https://www.instagram.com/imperialwebexperts/"
+              href={siteConfig.social.instagram}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-[#E1306C] hover:text-[#C13584] transition-colors duration-200"
@@ -193,7 +194,7 @@ const ContactForm: React.FC = () => {
               <span>{copy.instagramHandle}</span>
             </a>
             <a
-              href="https://www.linkedin.com/company/imperial-web-experts"
+              href={siteConfig.social.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors duration-200"

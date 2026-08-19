@@ -1,15 +1,10 @@
 'use client';
 
 import Image from "next/image";
-import { Linkedin, Instagram } from "lucide-react";
 import ClientScrollEffect from "@/app/components/client-side/ClientScrollEffect";
 import { useLanguage } from "@/app/components/client-side/LanguageProvider";
 import { Language } from "@/app/lib/types";
-
-const socialLinks = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/company/imperial-web-experts", Icon: Linkedin },
-  { label: "Instagram", href: "https://www.instagram.com/imperialwebexperts/", Icon: Instagram },
-];
+import { SOCIAL_LINKS } from "@/app/lib/siteConfig";
 
 const copyByLanguage: Record<Language, { heading: string; subheading: string }> = {
   english: {
@@ -52,7 +47,7 @@ export default function SocialLinks() {
             {copy.subheading}
           </p>
           <div className="flex flex-wrap justify-start gap-3">
-            {socialLinks.map(({ label, href, Icon }) => (
+            {SOCIAL_LINKS.map(({ label, href, Icon }) => (
               <a
                 key={label}
                 href={href}

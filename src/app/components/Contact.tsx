@@ -6,6 +6,7 @@ import CTAButton from "./CTAButton";
 import ClientScrollEffect from "@/app/components/client-side/ClientScrollEffect";
 import { useLanguage } from "@/app/components/client-side/LanguageProvider";
 import { Language } from "@/app/lib/types";
+import { siteConfig } from "@/app/lib/siteConfig";
 
 export interface ContactCopyVariant {
   ctaTitle: string;
@@ -51,19 +52,19 @@ export default function Contact({ copy }: ContactProps): React.ReactElement {
 
           <div className="relative flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6 pt-2 text-sm text-white/70">
             <a
-              href="tel:+17602342481"
+              href={siteConfig.phone.href}
               className="inline-flex items-center gap-2 hover:text-[#dab63e] transition-colors"
             >
               <Phone className="w-4 h-4" />
-              (760) 234-2481
+              {siteConfig.phone.display}
             </a>
             <span className="hidden sm:block w-1 h-1 rounded-full bg-white/30" />
             <a
-              href="mailto:imperialwebexperts@gmail.com"
+              href={`mailto:${siteConfig.email}`}
               className="inline-flex items-center gap-2 hover:text-[#dab63e] transition-colors"
             >
               <Mail className="w-4 h-4" />
-              imperialwebexperts@gmail.com
+              {siteConfig.email}
             </a>
           </div>
         </div>

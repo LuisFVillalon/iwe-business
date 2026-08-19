@@ -2,9 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { MapPin, Phone, Mail, Clock, Linkedin, Instagram } from "lucide-react";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { useLanguage } from "@/app/components/client-side/LanguageProvider";
 import { Language } from "@/app/lib/types";
+import { siteConfig, SOCIAL_LINKS } from "@/app/lib/siteConfig";
 
 interface FooterCopy {
   tagline: string;
@@ -72,11 +73,6 @@ const copyByLanguage: Record<Language, FooterCopy> = {
   },
 };
 
-const socialLinks = [
-  { href: "https://www.linkedin.com/company/imperial-web-experts", label: "LinkedIn", Icon: Linkedin },
-  { href: "https://www.instagram.com/imperialwebexperts/", label: "Instagram", Icon: Instagram },
-];
-
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
@@ -84,7 +80,7 @@ const jsonLd = {
   description:
     "Custom, lead-generating websites for small businesses in Imperial Valley, California and Mexicali, Baja California.",
   telephone: "+1-760-234-2481",
-  email: "imperialwebexperts@gmail.com",
+  email: siteConfig.email,
   areaServed: [
     { "@type": "City", name: "Calexico" },
     { "@type": "City", name: "Mexicali" },
@@ -96,7 +92,7 @@ const jsonLd = {
     addressRegion: "CA",
     addressCountry: "US",
   },
-  sameAs: socialLinks.map((link) => link.href),
+  sameAs: SOCIAL_LINKS.map((link) => link.href),
 };
 
 export default function Footer() {
@@ -143,7 +139,7 @@ export default function Footer() {
               {copy.tagline}
             </p>
             <div className="flex gap-2 mt-1">
-              {socialLinks.map(({ href, label, Icon }) => (
+              {SOCIAL_LINKS.map(({ href, label, Icon }) => (
                 <a
                   key={label}
                   href={href}
@@ -207,18 +203,18 @@ export default function Footer() {
                 {copy.areaLine}
               </span>
               <a
-                href="tel:+17602342481"
+                href={siteConfig.phone.href}
                 className="flex items-center gap-2.5 hover:text-white transition-colors"
               >
                 <Phone className="w-4 h-4 shrink-0 text-[#dab63e]" />
-                (760) 234-2481
+                {siteConfig.phone.display}
               </a>
               <a
-                href="mailto:imperialwebexperts@gmail.com"
+                href={`mailto:${siteConfig.email}`}
                 className="flex items-center gap-2.5 hover:text-white transition-colors break-all"
               >
                 <Mail className="w-4 h-4 shrink-0 text-[#dab63e]" />
-                imperialwebexperts@gmail.com
+                {siteConfig.email}
               </a>
               <span className="flex items-start gap-2.5">
                 <Clock className="w-4 h-4 mt-0.5 shrink-0 text-[#dab63e]" />
