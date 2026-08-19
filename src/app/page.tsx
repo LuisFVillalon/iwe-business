@@ -3,6 +3,7 @@ import Wrapper from '@/app/components/Wrapper';
 import Hero from '@/app/components/home-sections/Hero';
 import About from '@/app/components/home-sections/About';
 import Services from '@/app/components/home-sections/Services';
+import SocialLinks from '@/app/components/home-sections/SocialLinks';
 import Contact from '@/app/components//Contact';
 import Footer from '@/app/components/footer/Footer';
 import { Metadata } from 'next'
@@ -31,11 +32,20 @@ export default function Home() {
           <Hero/>
           <Services/>
           <About/>
+          <SocialLinks/>
           <Contact
-             ctaTitle="Start Growing Your Business Online"
-             ctaText="Get a website that brings in calls, customers, and results."
-             ctaButton="Let's Talk"
-             language="english"
+             copy={{
+               english: {
+                 ctaTitle: "Start Growing Your Business Online",
+                 ctaText: "Get a website that brings in calls, customers, and results.",
+                 ctaButton: "Let's Talk",
+               },
+               spanish: {
+                 ctaTitle: "Contáctanos",
+                 ctaText: "Nos encantaría saber cómo podemos ayudarle. ¡Envíenos un mensaje!",
+                 ctaButton: "Hablemos",
+               },
+             }}
           />
           <Footer/> 
         </Wrapper>

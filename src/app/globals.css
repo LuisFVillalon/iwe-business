@@ -12,29 +12,32 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html, body {
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", system-ui, sans-serif;
 }
 
 
 .inter-text {
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", system-ui, sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
 }
 
 .merriweather-text {
-  font-family: "Merriweather", serif;
+  font-family: "Inter", system-ui, sans-serif;
   font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.dm-serif-text-regular {
+  font-family: "Inter", system-ui, sans-serif;
   font-style: normal;
 }
 
@@ -80,14 +83,8 @@ body {
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-.fade-in-scroll-hero {
-  opacity: 0;
-  transform: translateY(2rem);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
 /* When element is visible, animate it */
-.fade-in-scroll.visible, .fade-in-scroll-hero.visible  {
+.fade-in-scroll.visible  {
   opacity: 1;
   transform: translateY(0);
 }
@@ -167,6 +164,20 @@ body {
   animation: fadeInTop 1s ease-out forwards;
 }
 
+@keyframes cardExpandFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.card-expand-fade-in {
+  animation: cardExpandFadeIn 0.25s ease-out;
+}
+
 /* Apply top animation on medium screens and up */
 @media (min-width: 768px) {
   .fade-in-responsive-left-top  {
@@ -179,8 +190,15 @@ body {
     animation: fadeInLeft 1s ease-out forwards;
   }  
   .fade-in-scroll-hero {
+    opacity: 0;
+    transform: translateY(2rem);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     animation: fadeInRight 1s ease-out forwards;
-  }  
+  }
+  .fade-in-scroll-hero.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
   .fade-in-scroll-right {
     transform: translateX(-2rem);
   } 

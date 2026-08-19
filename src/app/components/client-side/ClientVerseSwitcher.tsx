@@ -1,10 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-
-
-interface LangProps {
-  language: string;
-}
+import { useLanguage } from '@/app/components/client-side/LanguageProvider';
 
 interface BibleVerse {
   verse: string;
@@ -280,14 +276,15 @@ const BibleVerseSpanish: BibleVerse[] = [
 
 
 // Animated Bible Verse Component
-export default function ClientVerseSwitcher({ language }: LangProps): React.ReactElement {
+export default function ClientVerseSwitcher(): React.ReactElement {
+  const { language } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setIsVisible(false);
-      
+
       setTimeout(() => {
         setCurrentIndex(() => Math.floor(Math.random() * BibleVerses.length));
         setIsVisible(true);
@@ -296,13 +293,9 @@ export default function ClientVerseSwitcher({ language }: LangProps): React.Reac
 
     return () => clearInterval(interval);
   }, []);
-let currentVerse = BibleVerses[0];
 
-  if (language === "spanish") {
-    currentVerse = BibleVerseSpanish[currentIndex];
-  } else if (language === "english") {
-    currentVerse = BibleVerses[currentIndex];
-  }
+  const currentVerse = language === "spanish" ? BibleVerseSpanish[currentIndex] : BibleVerses[currentIndex];
+
   return (
     <div className="relative overflow-hidden min-h-[100px] flex items-center justify-center">
       <div

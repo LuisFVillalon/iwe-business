@@ -32,9 +32,7 @@ export default function Contact(): React.ReactElement {
        
       <Wrapper>
        <ContactForm />
-       <ClientVerseSwitcher
-        language="english"
-       />
+       <ClientVerseSwitcher/>
         <Footer />
       </Wrapper>
     </div>
